@@ -809,24 +809,24 @@ PBS.KIDS.define([ 'jquery' ], function($) {
     }
 
     // Google Analytics click tracking
-    trackClicksOn(
-      wheel,
-      $sel('a', wedges),
-      'Show Selected',
-      '[link_href] | Canvas Wheel'
-    );
-    trackClicksOn(
-      wheel,
-      $sel('a', slider),
-      'Show Selected',
-      '[link_href] | HTML Fallback Slider'
-    );
-    trackClicksOn(
-      wheel,
-      $sel('[data-all-shows-button="circle"] a', wheel),
-      'All Shows Selected',
-      'Canvas Wheel'
-    );
+    // trackClicksOn(
+    //   wheel,
+    //   $sel('a', wedges),
+    //   'Show Selected',
+    //   '[link_href] | Canvas Wheel'
+    // );
+    // trackClicksOn(
+    //   wheel,
+    //   $sel('a', slider),
+    //   'Show Selected',
+    //   '[link_href] | HTML Fallback Slider'
+    // );
+    // trackClicksOn(
+    //   wheel,
+    //   $sel('[data-all-shows-button="circle"] a', wheel),
+    //   'All Shows Selected',
+    //   'Canvas Wheel'
+    // );
   }
 
   function animateWheelIn(wheel, config, duration, delay) {
