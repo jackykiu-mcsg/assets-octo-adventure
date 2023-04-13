@@ -9,16 +9,16 @@ PBS.KIDS.define([ 'jquery' ], function($) {
 
   var debugMsgs = location.search.match(/\bdebugMsgs\b/);
 
-  function makeLogger(name, level) {
-    level = level || 'log';
-    return function() {
-      if (debugMsgs || level !== 'log') {
-        var args = Array.prototype.slice.call(arguments);
-        args.unshift('PBS.KIDS.' + name);
-        console[level].apply(null, args);
-      }
-    };
-  }
+  // function makeLogger(name, level) {
+  //   level = level || 'log';
+  //   return function() {
+  //     if (debugMsgs || level !== 'log') {
+  //       var args = Array.prototype.slice.call(arguments);
+  //       args.unshift('PBS.KIDS.' + name);
+  //       console[level].apply(null, args);
+  //     }
+  //   };
+  // }
 
   var log = makeLogger('the-wheel');
   var error = makeLogger('the-wheel', 'error');
