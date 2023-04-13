@@ -518,49 +518,49 @@ PBS.KIDS.define([ 'jquery' ], function($) {
     };
   }
 
-  function trackClicksOn(wheel, links, desc, msg) {
-    var state = getRotationState(wheel);
-    var arg1 = 'Wheel';
-    if (typeof $ !== 'function') {
-      error('jQuery is not found. Click tracking is subsequently broken!');
-    } else if (typeof window.GA_obj !== 'undefined') {
-      if (!Array.isArray(links)) links = [ links ];
-      links.forEach(function(link) {
-        // prevent Firefox's image dragging behavior
-        addListener(link, 'mousedown', function(e) {
-          e.preventDefault();
-        });
+  // function trackClicksOn(wheel, links, desc, msg) {
+  //   var state = getRotationState(wheel);
+  //   var arg1 = 'Wheel';
+  //   if (typeof $ !== 'function') {
+  //     error('jQuery is not found. Click tracking is subsequently broken!');
+  //   } else if (typeof window.GA_obj !== 'undefined') {
+  //     if (!Array.isArray(links)) links = [ links ];
+  //     links.forEach(function(link) {
+  //       // prevent Firefox's image dragging behavior
+  //       addListener(link, 'mousedown', function(e) {
+  //         e.preventDefault();
+  //       });
 
-        addListener(link, 'click', function(e) {
-          var arg2 = desc;
-          var url = link ? link.getAttribute('href') : null;
-          if (url) {
-            e.preventDefault();
+  //       addListener(link, 'click', function(e) {
+  //         var arg2 = desc;
+  //         var url = link ? link.getAttribute('href') : null;
+  //         if (url) {
+  //           e.preventDefault();
 
-            if (state.rotatedByHand) {
-              log('prevented a likely accidental "click"');
-              return;
-            }
+  //           if (state.rotatedByHand) {
+  //             log('prevented a likely accidental "click"');
+  //             return;
+  //           }
 
-            var arg3 = msg.replace(/\[link_href\]/g, url) + ' | ' + $(window).width() + 'x' + $(window).height();
+  //           var arg3 = msg.replace(/\[link_href\]/g, url) + ' | ' + $(window).width() + 'x' + $(window).height();
 
-            if (location.search.match(/\bdebugGA\b/)) {
-              log('tracking!', [ arg1, arg2, arg3 ]);
-            } else {
-              PBS.KIDS.trackEvent(arg1, arg2, arg3);
-              setTimeout(function() {
-                window.parent.location = url;
-              }, 100);
-            }
-          } else {
-            error('no URL found to link to/track.');
-          }
-        });
-      });
-    } else {
-      error('GA_obj is not defined. Click tracking is subsequently broken!');
-    }
-  }
+  //           if (location.search.match(/\bdebugGA\b/)) {
+  //             log('tracking!', [ arg1, arg2, arg3 ]);
+  //           } else {
+  //             PBS.KIDS.trackEvent(arg1, arg2, arg3);
+  //             setTimeout(function() {
+  //               window.parent.location = url;
+  //             }, 100);
+  //           }
+  //         } else {
+  //           error('no URL found to link to/track.');
+  //         }
+  //       });
+  //     });
+  //   } else {
+  //     error('GA_obj is not defined. Click tracking is subsequently broken!');
+  //   }
+  // }
 
   function addListener(el, event, fn) {
     if (!el) return;
