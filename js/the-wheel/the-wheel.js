@@ -1169,7 +1169,7 @@ PBS.KIDS.define([ 'jquery' ], function($) {
         }
       });
     });
-    log('applied ' + applied.length + ' theme colors:', JSON.stringify(applied, null, 2));
+    // log('applied ' + applied.length + ' theme colors:', JSON.stringify(applied, null, 2));
   }
 
   function fireWheelReady() {
