@@ -20,8 +20,8 @@ PBS.KIDS.define([ 'jquery' ], function($) {
   //   };
   // }
 
-  var log = makeLogger('the-wheel');
-  var error = makeLogger('the-wheel', 'error');
+  // var log = makeLogger('the-wheel');
+  // var error = makeLogger('the-wheel', 'error');
 
   function getDebugValueFromQueryString(name) {
     var output;
